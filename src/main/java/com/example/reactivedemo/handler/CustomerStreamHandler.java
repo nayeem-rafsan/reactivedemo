@@ -1,15 +1,16 @@
-package com.example.reactivedemo.Handler;
+package com.example.reactivedemo.handler;
 
 import com.example.reactivedemo.dao.CustomerDao;
 import com.example.reactivedemo.dto.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.rsocket.RSocketProperties;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.Optional;
 
 @Service
 public class CustomerStreamHandler {
@@ -28,10 +29,9 @@ public class CustomerStreamHandler {
         return ServerResponse.ok().body(customer, Customer.class);
     }
     public Mono<ServerResponse> saveCustomer(ServerRequest request){
-        Mono<Customer> customer = request.bodyToMono(Customer.class);
-        System.out.println(customer.toString());
-        Mono<String> customerString = customer.map(dto -> dto.getId() + " : " + dto.getName());
-        return ServerResponse.ok().body(customerString, Customer.class);
+        Mono<Customer> customerMono = request.bodyToMono(Customer.class);
+        Mono<String> saveResponse = customerMono.map(dto -> dto.getId() + ":" + dto.getName());
+        return ServerResponse.ok().body(saveResponse,String.class);
     }
 
 }

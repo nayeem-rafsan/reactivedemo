@@ -1,6 +1,6 @@
-package com.example.reactivedemo.Router;
+package com.example.reactivedemo.router;
 
-import com.example.reactivedemo.Handler.CustomerStreamHandler;
+import com.example.reactivedemo.handler.CustomerStreamHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ public class RouterConfig {
         return RouterFunctions.route()
                 .GET("/router/customers", handler::getCustomers)
                 .GET("/router/customers/{input}", handler::getCustomerByID)
-                .POST("/router/customers/save", handler::saveCustomer)
+                .POST("/router/customers/save",handler::saveCustomer)
                 .build();
     }
 }
