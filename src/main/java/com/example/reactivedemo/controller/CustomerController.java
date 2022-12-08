@@ -17,7 +17,7 @@ public class CustomerController {
     @Autowired
     public CustomerService customerService;
     @GetMapping(value = "/", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<Customer> getAllCustomers(){
+    public List<Customer> getAllCustomersList(){
         return customerService.loadAllCustomers();
     }
 }
