@@ -17,23 +17,26 @@ import java.util.Optional;
 public class CustomerStreamHandler {
     @Autowired
     private CustomerDao customerDao;
-
+    // GET Request for Reactive streams, to get all the customers
     public Mono<ServerResponse> getCustomers(ServerRequest request){
         Flux<Customer> customers = customerDao.getCustomers();
         return ServerResponse.ok()
                 .contentType(MediaType.TEXT_EVENT_STREAM)
                 .body(customers, Customer.class);
     }
+    // GET Request for Reactive streams, to get one customer
     public Mono<ServerResponse> getCustomerByID(ServerRequest request){
         int customerID = Integer.parseInt(request.pathVariable("id"));
         Mono<Customer> customer = customerDao.getCustomers().filter(e-> e.getId()==customerID).next();
         return ServerResponse.ok().body(customer, Customer.class);
     }
+    // POST Request for Reactive streams, create a customer
     public Mono<ServerResponse> saveCustomer(ServerRequest request){
         Mono<Customer> customerMono = request.bodyToMono(Customer.class);
         Mono<String> saveResponse = customerMono.map(dto -> dto.getId() + ":" + dto.getName());
         return ServerResponse.ok().body(saveResponse,String.class);
     }
+    // GET Request to update a customer
     public Mono<ServerResponse> updateCustomer(ServerRequest request){
         int customerID = Integer.parseInt(request.pathVariable("id"));
         Mono<Customer> customerMono = customerDao.getCustomers().filter(e-> e.getId()==customerID).next();

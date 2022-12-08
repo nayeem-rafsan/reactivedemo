@@ -6,14 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class CustomerService {
     @Autowired
     public CustomerDao customerDao;
-
-    public Flux<Customer> loadAllCustomers(){
-        return customerDao.getCustomers();
+    // GET Methods for List:
+    public List<Customer> loadAllCustomers(){
+        return customerDao.getCustomersList();
+    }
+    public Customer loadCustomerByID(int id){
+        List<Customer> listOfCustomers = loadAllCustomers();
+        for(Customer customer:listOfCustomers){
+            if(customer.getId()==id){
+                return customer;
+            }
+        }
+        return null;
     }
 }
