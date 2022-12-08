@@ -29,6 +29,7 @@ public class CustomerStreamHandler {
     }
     public Mono<ServerResponse> saveCustomer(ServerRequest request){
         Mono<Customer> customer = request.bodyToMono(Customer.class);
+        System.out.println(customer.toString());
         Mono<String> customerString = customer.map(dto -> dto.getId() + " : " + dto.getName());
         return ServerResponse.ok().body(customerString, Customer.class);
     }
