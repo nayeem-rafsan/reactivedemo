@@ -1,0 +1,20 @@
+SERVICES variable is ignored if EAGER_SERVICE_LOADING=0.
+2022-12-26T06:20:49.251  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2022-12-26T06:20:49.251  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2022-12-26T06:20:49.253  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2022-12-26T06:20:49.253  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2022-12-26T06:20:49.363  INFO --- [  MainThread] localstack.utils.bootstrap : Execution of "start_runtime_components" took 603.08ms
+2022-12-26T09:35:32.357  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "_load_service_plugin" took 943.59ms
+2022-12-26T09:35:33.005  INFO --- [uncthread780] l.services.dynamodb.server : Initializing DynamoDB Local with the following configuration:
+2022-12-26T09:35:33.005  INFO --- [uncthread780] l.services.dynamodb.server : Port:	41167
+2022-12-26T09:35:33.005  INFO --- [uncthread780] l.services.dynamodb.server : InMemory:	false
+2022-12-26T09:35:33.005  INFO --- [uncthread780] l.services.dynamodb.server : DbPath:	/var/lib/localstack/tmp/state/dynamodb
+2022-12-26T09:35:33.005  INFO --- [uncthread780] l.services.dynamodb.server : SharedDb:	false
+2022-12-26T09:35:33.005  INFO --- [uncthread780] l.services.dynamodb.server : shouldDelayTransientStatuses:	false
+2022-12-26T09:35:33.006  INFO --- [uncthread780] l.services.dynamodb.server : CorsParams:	null
+2022-12-26T09:35:33.032  INFO --- [uncthread780] l.services.dynamodb.server : 
+2022-12-26T09:35:35.820  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "require" took 4406.55ms
+2022-12-26T09:35:35.857  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.ListTables => 200
+2022-12-26T09:40:32.349  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.ListTables => 200
+2022-12-26T10:21:39.603  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.CreateTable => 200
+2022-12-26T10:21:39.710  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.ListTables => 200
