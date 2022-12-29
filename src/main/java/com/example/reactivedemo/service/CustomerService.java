@@ -1,5 +1,6 @@
 package com.example.reactivedemo.service;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.example.reactivedemo.dao.CustomerDao;
 import com.example.reactivedemo.dto.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,10 @@ public class CustomerService {
     public List<Customer> loadAllCustomers(){
         return customerDao.getCustomersList();
     }
-    public Customer loadCustomerByID(int id){
+    public Customer loadCustomerByID(String id){
         List<Customer> listOfCustomers = loadAllCustomers();
         for(Customer customer:listOfCustomers){
-            if(customer.getId()==id){
+            if(customer.getId().equals(id)){
                 return customer;
             }
         }

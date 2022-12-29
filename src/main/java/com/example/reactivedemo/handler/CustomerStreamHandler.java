@@ -26,8 +26,8 @@ public class CustomerStreamHandler {
     }
     // GET Request for Reactive streams, to get one customer
     public Mono<ServerResponse> getCustomerByID(ServerRequest request){
-        int customerID = Integer.parseInt(request.pathVariable("id"));
-        Mono<Customer> customer = customerDao.getCustomers().filter(e-> e.getId()==customerID).next();
+        String customerID = request.pathVariable("id");
+        Mono<Customer> customer = customerDao.getCustomers().filter(e-> e.getId().equals(customerID)).next();
         return ServerResponse.ok().body(customer, Customer.class);
     }
     // POST Request for Reactive streams, create a customer
@@ -38,8 +38,8 @@ public class CustomerStreamHandler {
     }
     // GET Request to update a customer
     public Mono<ServerResponse> updateCustomer(ServerRequest request){
-        int customerID = Integer.parseInt(request.pathVariable("id"));
-        Mono<Customer> customerMono = customerDao.getCustomers().filter(e-> e.getId()==customerID).next();
+        String customerID = request.pathVariable("id");
+        Mono<Customer> customerMono = customerDao.getCustomers().filter(e-> e.getId().equals(customerID)).next();
         Mono<Customer> updatedMono = request.bodyToMono(Customer.class);
         customerMono = updatedMono.map(e -> {
             return e;

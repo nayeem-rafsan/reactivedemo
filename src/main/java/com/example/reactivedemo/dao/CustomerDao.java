@@ -19,13 +19,13 @@ public class CustomerDao {
         return Flux.range(1,10)
                 .delayElements(Duration.ofSeconds(1))
                 .doOnNext(i-> System.out.println("customer: "+i))
-                .map(i-> new Customer(i, "customer: "+i));
+                .map(i-> new Customer(i+"", "customer: "+i));
 //        return IntStream.rangeClosed(1,50)
 //                .mapToObj(i-> new Customer(i, "customer:"+i)).collect(Collectors.toList());
     }
     // Functional approach
     public List<Customer> getCustomersList(){
         return IntStream.rangeClosed(1,10)
-                .mapToObj(i-> new Customer(i, "customer: "+i)).collect(Collectors.toList());
+                .mapToObj(i-> new Customer(i+"", "customer: "+i)).collect(Collectors.toList());
     }
 }
