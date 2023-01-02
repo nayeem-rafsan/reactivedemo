@@ -1,19 +1,27 @@
 package com.example.reactivedemo.configuration;
 
 
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
-import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
+//import com.amazonaws.auth.AWSCredentials;
+//import com.amazonaws.auth.BasicAWSCredentials;
+//import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+//import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+//import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
+import com.example.reactivedemo.dto.Customer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.StringUtils;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
+import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
+import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient;
+
+import java.net.URI;
 
 @Configuration
-@EnableDynamoDBRepositories
-        (basePackages = "com.baeldung.spring.data.dynamodb.repositories")
+//@EnableDynamoDBRepositories
+//        (basePackages = "com.baeldung.spring.data.dynamodb.repositories")
 public class DynamoDBConfig {
 
     @Value("${amazon.dynamodb.endpoint}")
@@ -24,23 +32,37 @@ public class DynamoDBConfig {
 
     @Value("${amazon.aws.secretkey}")
     private String amazonAWSSecretKey;
+    // this is required for simple dynamodb crud
+//    @Bean
+//    public AmazonDynamoDB amazonDynamoDB() {
+//        AmazonDynamoDB amazonDynamoDB
+//                = new AmazonDynamoDBClient(amazonAWSCredentials());
+//
+//        if (!StringUtils.isEmpty(amazonDynamoDBEndpoint)) {
+//            amazonDynamoDB.setEndpoint(amazonDynamoDBEndpoint);
+//        }
+//
+//        return amazonDynamoDB;
+//    }
 
+//    @Bean
+//    public AWSCredentials amazonAWSCredentials() {
+//        return new BasicAWSCredentials(
+//                amazonAWSAccessKey, amazonAWSSecretKey);
+//    }
     @Bean
-    public AmazonDynamoDB amazonDynamoDB() {
-        AmazonDynamoDB amazonDynamoDB
-                = new AmazonDynamoDBClient(amazonAWSCredentials());
-
-        if (!StringUtils.isEmpty(amazonDynamoDBEndpoint)) {
-            amazonDynamoDB.setEndpoint(amazonDynamoDBEndpoint);
-        }
-
-        return amazonDynamoDB;
+    public DynamoDbAsyncClient getDynamoDbAsyncClient() {
+        return DynamoDbAsyncClient.builder()
+                .credentialsProvider(ProfileCredentialsProvider.create("default"))
+                .endpointOverride(URI.create(amazonDynamoDBEndpoint))
+                .build();
     }
 
     @Bean
-    public AWSCredentials amazonAWSCredentials() {
-        return new BasicAWSCredentials(
-                amazonAWSAccessKey, amazonAWSSecretKey);
+    public DynamoDbEnhancedAsyncClient getDynamoDbEnhancedAsyncClient() {
+        return DynamoDbEnhancedAsyncClient.builder()
+                .dynamoDbClient(getDynamoDbAsyncClient())
+                .build();
     }
 }
 

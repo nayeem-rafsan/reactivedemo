@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -22,28 +23,55 @@ public class CustomerController {
 
 
     // DynamoDb controller
-    @Autowired
-    public CustomerRepository customerRepository;
+//    @Autowired
+//    public CustomerRepository customerRepository;
+//    @PostMapping("/customer")
+//    public Customer saveCustomer(@RequestBody Customer customer) {
+//        return customerRepository.save(customer);
+//    }
+//    @GetMapping("/customer")
+//    public List<Customer> getAllCustomer(){
+//        return customerRepository.getAllCustomers();
+//    }
+//    @GetMapping("/customer/{id}")
+//    public Customer getEmployee(@PathVariable("id") String customerId) {
+//        return customerRepository.getCustomerById(customerId);
+//    }
+//
+//    @DeleteMapping("/customer/{id}")
+//    public String deleteCustomer(@PathVariable("id") String customerId) {
+//        return  customerRepository.delete(customerId);
+//    }
+//
+//    @PutMapping("/customer/{id}")
+//    public String updateEmployee(@PathVariable("id") String customerId, @RequestBody Customer customer) {
+//        return customerRepository.updateCustomer(customerId,customer);
+//    }
+
+    private final CustomerService customerService;
+    public CustomerController(CustomerService customerService){
+        this.customerService = customerService;
+    }
     @PostMapping("/customer")
-    public Customer saveCustomer(@RequestBody Customer customer) {
-        return customerRepository.save(customer);
+    public Mono<String> saveCustomer(@RequestBody Customer customer) {
+        return customerService.createNewCustomer(customer);
     }
     @GetMapping("/customer")
-    public List<Customer> getAllCustomer(){
-        return customerRepository.getAllCustomers();
+    public Flux<Customer> getAllCustomer(){
+        return customerService.getCustomerList();
     }
     @GetMapping("/customer/{id}")
-    public Customer getEmployee(@PathVariable("id") String customerId) {
-        return customerRepository.getCustomerById(customerId);
+    public Mono<Customer> getCustomerById(@PathVariable("id") String id) {
+        return customerService.getCustomerByCustomerId(id);
     }
-
+//
     @DeleteMapping("/customer/{id}")
-    public String deleteCustomer(@PathVariable("id") String customerId) {
-        return  customerRepository.delete(customerId);
+    public Mono<String> deleteCustomer(@PathVariable("id") String customerId) {
+        return  customerService.deleteCustomerByCustomerId(customerId);
     }
-
+//
     @PutMapping("/customer/{id}")
-    public String updateEmployee(@PathVariable("id") String customerId, @RequestBody Customer customer) {
-        return customerRepository.updateCustomer(customerId,customer);
+    public Mono<String> updateEmployee(@PathVariable("id") String id, @RequestBody Customer customer) {
+        return customerService.updateExistingCustomer(customer);
     }
 }
