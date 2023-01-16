@@ -19,6 +19,7 @@ import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.*;
 import software.amazon.awssdk.core.ResponseBytes;
+import software.amazon.awssdk.services.sqs.SqsClient;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -68,10 +69,11 @@ public class CustomerRepository {
 //    @Autowired
     private final DynamoDbAsyncTable<Customer> customerDynamoDbAsyncTable;
     private final S3Client s3Client;
+    private final SqsClient sqsClient;
 //    public CustomerRepository(DynamoDbAsyncTable<Customer> customerDynamoDbAsyncTable) {
 //        this.customerDynamoDbAsyncTable = customerDynamoDbAsyncTable;
 //    }
-    public CustomerRepository(DynamoDbEnhancedAsyncClient asyncClient, S3Client s3Client) {
+    public CustomerRepository(DynamoDbEnhancedAsyncClient asyncClient, S3Client s3Client, SqsClient sqsClient) {
         this.enhancedAsyncClient = asyncClient;
         this.customerDynamoDbAsyncTable = enhancedAsyncClient.table(Customer.class.getSimpleName(), TableSchema.fromBean(Customer.class));
 //        this.enhancedAsyncClient.list_table
@@ -80,6 +82,8 @@ public class CustomerRepository {
 //                                .readCapacityUnits(10L)
 //                                .writeCapacityUnits(10L)
 //                                .build()));
+
+        // S3
         this.s3Client = s3Client;
         try {
             // if bucketname already exists it will throw an error
@@ -96,6 +100,11 @@ public class CustomerRepository {
 //        this.putS3Object("customerbucket", "objectkey1");
         // get a objetct from bucket
         this.getObjectFromS3(bucketName,keyName);
+
+        // SQS
+        this.sqsClient = sqsClient;
+
+
     }
 
     public CompletableFuture<Void> save(Customer customer){

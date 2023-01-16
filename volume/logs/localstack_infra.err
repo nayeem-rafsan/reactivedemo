@@ -76,3 +76,6 @@
 2023-01-16T08:20:29.503  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
 2023-01-16T08:20:29.582  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
 2023-01-16T08:20:29.645  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
+2023-01-16T10:16:00.736  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T10:16:00.844  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T10:16:00.908  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.GetObject => 200
