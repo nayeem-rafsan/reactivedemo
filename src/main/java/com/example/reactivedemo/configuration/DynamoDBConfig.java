@@ -15,8 +15,9 @@ import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
+import software.amazon.awssdk.regions.servicemetadata.S3ControlServiceMetadata;
 import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient;
-
+import software.amazon.awssdk.services.s3.S3Client;
 import java.net.URI;
 
 @Configuration
@@ -62,6 +63,12 @@ public class DynamoDBConfig {
     public DynamoDbEnhancedAsyncClient getDynamoDbEnhancedAsyncClient() {
         return DynamoDbEnhancedAsyncClient.builder()
                 .dynamoDbClient(getDynamoDbAsyncClient())
+                .build();
+    }
+    @Bean
+    public S3Client getS3Client(){
+        return S3Client.builder()
+                .endpointOverride(URI.create(amazonDynamoDBEndpoint))
                 .build();
     }
 }

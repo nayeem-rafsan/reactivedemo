@@ -1,15 +1,12 @@
 package com.example.reactivedemo.controller;
 
-import com.example.reactivedemo.Repository.CustomerRepository;
 import com.example.reactivedemo.dto.Customer;
 import com.example.reactivedemo.service.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.List;
+import java.time.Duration;
 
 @RestController
 public class CustomerController {
@@ -60,11 +57,33 @@ public class CustomerController {
     public Flux<Customer> getAllCustomer(){
         return customerService.getCustomerList();
     }
+//    @GetMapping("/test")
+//    public Flux<Object> testMethod(){
+//        return customerService.getCustomerList().map(
+//                c -> {
+//                    if(c.getId().equals("3")){
+//                        return new Exception("");
+//                    }
+//                    else {
+//                        return c;
+//                    }
+//                }
+//        ).onErrorResume(e->System.out::println);
+//    }
     @GetMapping("/customer/{id}")
     public Mono<Customer> getCustomerById(@PathVariable("id") String id) {
         return customerService.getCustomerByCustomerId(id);
     }
 //
+    @GetMapping(value = "/t",produces="application/json")
+    public Flux<String> test() {
+        Flux<String> nameFlux1 = Flux.just("dummy\n");
+        Flux<String> nameFlux2 = Flux.just("dummy1\n").delayElements(Duration.ofSeconds(10));
+        Flux<String> nameFlux3 = Flux.just("dummy2\n").delayElements(Duration.ofSeconds(2));
+        Flux<String> nameFlux4 = Flux.just("dummy3").delayElements(Duration.ofSeconds(5));
+//        return Flux.just(Flux.just("1"), Flux.just("2")).delayElements(Duration.ofSeconds(10)).toString();
+        return Flux.merge(nameFlux1,nameFlux2,nameFlux3,nameFlux4);
+    }
     @DeleteMapping("/customer/{id}")
     public Mono<String> deleteCustomer(@PathVariable("id") String customerId) {
         return  customerService.deleteCustomerByCustomerId(customerId);

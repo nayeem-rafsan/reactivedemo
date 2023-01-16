@@ -3,6 +3,7 @@ package com.example.reactivedemo;
 //import com.amazonaws.client.builder.AwsClientBuilder;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,7 @@ public class ReactivedemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(ReactivedemoApplication.class, args);
     }
+
 //    @Bean
 //    DynamoDbClient dynamoDbClient(DynamoProperties dynamoProperties){
 //        return apply(dynamoProperties, DynamoDbClient.builder()).build();

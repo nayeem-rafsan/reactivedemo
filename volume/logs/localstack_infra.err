@@ -1,191 +1,78 @@
-2023-01-02T04:16:42.428  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
-2023-01-02T04:16:42.428  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
-2023-01-02T04:16:42.430  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
-2023-01-02T04:16:42.430  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
-2023-01-02T04:17:04.121  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "_load_service_plugin" took 932.50ms
-2023-01-02T04:17:04.584  INFO --- [functhread12] l.services.dynamodb.server : Initializing DynamoDB Local with the following configuration:
-2023-01-02T04:17:04.584  INFO --- [functhread12] l.services.dynamodb.server : Port:	59957
-2023-01-02T04:17:04.584  INFO --- [functhread12] l.services.dynamodb.server : InMemory:	false
-2023-01-02T04:17:04.584  INFO --- [functhread12] l.services.dynamodb.server : DbPath:	/var/lib/localstack/tmp/state/dynamodb
-2023-01-02T04:17:04.584  INFO --- [functhread12] l.services.dynamodb.server : SharedDb:	false
-2023-01-02T04:17:04.584  INFO --- [functhread12] l.services.dynamodb.server : shouldDelayTransientStatuses:	false
-2023-01-02T04:17:04.584  INFO --- [functhread12] l.services.dynamodb.server : CorsParams:	null
-2023-01-02T04:17:04.603  INFO --- [functhread12] l.services.dynamodb.server : 
-2023-01-02T04:17:06.895  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "require" took 3706.24ms
-2023-01-02T04:17:06.927  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.ListTables => 200
-2023-01-02T04:17:26.756  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.CreateTable => 200
-2023-01-02T04:18:21.145  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.Scan => 200
-2023-01-02T04:18:32.466  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "_load_service_plugin" took 541.44ms
-2023-01-02T04:18:32.473  INFO --- [   asgi_gw_0] localstack.services.infra  : Starting mock Lambda service on http port 4566 ...
-2023-01-02T04:18:33.202  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "require" took 1277.56ms
-2023-01-02T04:18:33.669  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.PutItem => 200
-2023-01-02T04:18:47.806  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.PutItem => 200
-2023-01-02T04:19:00.345  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.PutItem => 200
-2023-01-02T04:19:03.591  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.Scan => 200
-2023-01-02T04:19:14.965  INFO --- [functhread12] l.services.dynamodb.server : 04:19:14.928 [qtp365056339-17] WARN  com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler - DynamoDBLocalServiceException exception occured
-2023-01-02T04:19:14.965  INFO --- [functhread12] l.services.dynamodb.server : com.amazonaws.services.dynamodbv2.exceptions.DynamoDBLocalServiceException: The number of conditions on the keys is invalid
-2023-01-02T04:19:14.965  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildLocalServiceException(AWSExceptionFactory.java:93) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.965  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildAWSException(AWSExceptionFactory.java:58) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.965  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.DataPlaneFunction.validateGetKey(DataPlaneFunction.java:168) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.965  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.ReadDataPlaneFunction.validateGetKey(ReadDataPlaneFunction.java:10) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.965  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.GetItemFunction.apply(GetItemFunction.java:64) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.awssdkv1.client.LocalAmazonDynamoDB.getItem(LocalAmazonDynamoDB.java:266) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBRequestHandler.getItem(LocalDynamoDBRequestHandler.java:296) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.GetItemDispatcher.enact(GetItemDispatcher.java:18) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.GetItemDispatcher.enact(GetItemDispatcher.java:12) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.packageDynamoDBResponse(LocalDynamoDBServerHandler.java:408) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.handle(LocalDynamoDBServerHandler.java:495) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.966  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:190) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.Server.handle(Server.java:516) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.967  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.968  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.968  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.968  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.968  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.968  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.968  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.968  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.968  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.969  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.969  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.969  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:19:14.969  INFO --- [functhread12] l.services.dynamodb.server : at java.lang.Thread.run(Unknown Source) ~[?:?]
-2023-01-02T04:19:14.990  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.GetItem => 400 (ValidationException)
-2023-01-02T04:22:42.054  INFO --- [functhread12] l.services.dynamodb.server : 04:22:42.053 [qtp365056339-13] WARN  com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler - DynamoDBLocalServiceException exception occured
-2023-01-02T04:22:42.054  INFO --- [functhread12] l.services.dynamodb.server : com.amazonaws.services.dynamodbv2.exceptions.DynamoDBLocalServiceException: The number of conditions on the keys is invalid
-2023-01-02T04:22:42.054  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildLocalServiceException(AWSExceptionFactory.java:93) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.054  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildAWSException(AWSExceptionFactory.java:58) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.054  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.DataPlaneFunction.validateGetKey(DataPlaneFunction.java:168) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.054  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.ReadDataPlaneFunction.validateGetKey(ReadDataPlaneFunction.java:10) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.GetItemFunction.apply(GetItemFunction.java:64) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.awssdkv1.client.LocalAmazonDynamoDB.getItem(LocalAmazonDynamoDB.java:266) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBRequestHandler.getItem(LocalDynamoDBRequestHandler.java:296) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.GetItemDispatcher.enact(GetItemDispatcher.java:18) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.GetItemDispatcher.enact(GetItemDispatcher.java:12) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.packageDynamoDBResponse(LocalDynamoDBServerHandler.java:408) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.handle(LocalDynamoDBServerHandler.java:495) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.055  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:190) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.Server.handle(Server.java:516) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.056  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.057  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.057  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.057  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.057  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.057  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.058  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.060  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.GetItem => 400 (ValidationException)
-2023-01-02T04:22:42.061  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:42.062  INFO --- [functhread12] l.services.dynamodb.server : at java.lang.Thread.run(Unknown Source) ~[?:?]
-2023-01-02T04:22:43.997  INFO --- [functhread12] l.services.dynamodb.server : 04:22:43.995 [qtp365056339-16] WARN  com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler - DynamoDBLocalServiceException exception occured
-2023-01-02T04:22:43.997  INFO --- [functhread12] l.services.dynamodb.server : com.amazonaws.services.dynamodbv2.exceptions.DynamoDBLocalServiceException: The number of conditions on the keys is invalid
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildLocalServiceException(AWSExceptionFactory.java:93) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildAWSException(AWSExceptionFactory.java:58) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.DataPlaneFunction.validateGetKey(DataPlaneFunction.java:168) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.ReadDataPlaneFunction.validateGetKey(ReadDataPlaneFunction.java:10) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.GetItemFunction.apply(GetItemFunction.java:64) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.awssdkv1.client.LocalAmazonDynamoDB.getItem(LocalAmazonDynamoDB.java:266) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBRequestHandler.getItem(LocalDynamoDBRequestHandler.java:296) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.GetItemDispatcher.enact(GetItemDispatcher.java:18) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.GetItemDispatcher.enact(GetItemDispatcher.java:12) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.998  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.packageDynamoDBResponse(LocalDynamoDBServerHandler.java:408) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.handle(LocalDynamoDBServerHandler.java:495) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:190) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:43.999  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.Server.handle(Server.java:516) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.000  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.000  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.000  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.000  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.000  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.000  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.000  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.000  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.001  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.004  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.004  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.005  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.005  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.005  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:22:44.005  INFO --- [functhread12] l.services.dynamodb.server : at java.lang.Thread.run(Unknown Source) ~[?:?]
-2023-01-02T04:22:44.007  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.GetItem => 400 (ValidationException)
-2023-01-02T04:22:49.372  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.Scan => 200
-2023-01-02T04:30:54.166  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.Scan => 200
-2023-01-02T04:30:56.728  INFO --- [functhread12] l.services.dynamodb.server : 04:30:56.727 [qtp365056339-20] WARN  com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler - DynamoDBLocalServiceException exception occured
-2023-01-02T04:30:56.728  INFO --- [functhread12] l.services.dynamodb.server : com.amazonaws.services.dynamodbv2.exceptions.DynamoDBLocalServiceException: The number of conditions on the keys is invalid
-2023-01-02T04:30:56.729  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildLocalServiceException(AWSExceptionFactory.java:93) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.729  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildAWSException(AWSExceptionFactory.java:58) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.729  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.DataPlaneFunction.validateGetKey(DataPlaneFunction.java:168) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.730  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.ReadDataPlaneFunction.validateGetKey(ReadDataPlaneFunction.java:10) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.730  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.GetItemFunction.apply(GetItemFunction.java:64) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.731  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.awssdkv1.client.LocalAmazonDynamoDB.getItem(LocalAmazonDynamoDB.java:266) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.731  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBRequestHandler.getItem(LocalDynamoDBRequestHandler.java:296) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.731  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.GetItemDispatcher.enact(GetItemDispatcher.java:18) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.731  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.GetItemDispatcher.enact(GetItemDispatcher.java:12) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.731  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.packageDynamoDBResponse(LocalDynamoDBServerHandler.java:408) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.731  INFO --- [functhread12] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.handle(LocalDynamoDBServerHandler.java:495) ~[DynamoDBLocal.jar:?]
-2023-01-02T04:30:56.731  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.732  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.732  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.732  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:190) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.732  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.732  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.732  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.733  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.734  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.Server.handle(Server.java:516) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.734  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.734  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.734  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.734  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.734  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.734  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.734  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.735  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.735  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.735  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.735  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.735  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.735  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.735  INFO --- [functhread12] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-02T04:30:56.736  INFO --- [functhread12] l.services.dynamodb.server : at java.lang.Thread.run(Unknown Source) ~[?:?]
-2023-01-02T04:30:56.743  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.GetItem => 400 (ValidationException)
-2023-01-02T04:45:02.236  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.DeleteTable => 200
-2023-01-02T04:45:11.313  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.ListTables => 200
-2023-01-02T04:57:18.338  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.CreateTable => 200
-2023-01-02T04:57:50.511  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.ListTables => 200
-2023-01-02T04:58:01.049  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.Scan => 200
-2023-01-02T04:58:10.876  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.PutItem => 200
-2023-01-02T04:58:22.107  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.PutItem => 200
-2023-01-02T04:58:26.918  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.GetItem => 200
-2023-01-02T04:58:45.695  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.GetItem => 200
-2023-01-02T04:58:45.973  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.UpdateItem => 200
-2023-01-02T04:58:50.014  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.GetItem => 200
-2023-01-02T04:58:54.350  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.DeleteItem => 200
-2023-01-02T05:00:40.025  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.DeleteItem => 200
-2023-01-02T05:00:45.861  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.Scan => 200
-2023-01-02T05:01:02.189  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.PutItem => 200
-2023-01-02T05:01:14.186  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.PutItem => 200
-2023-01-02T05:01:24.339  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.PutItem => 200
-2023-01-02T05:01:27.408  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS dynamodb.Scan => 200
+2023-01-16T06:37:36.379  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2023-01-16T06:37:36.379  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2023-01-16T06:37:36.381  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2023-01-16T06:37:36.381  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2023-01-16T06:42:31.180  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "_load_service_plugin" took 1048.54ms
+2023-01-16T06:42:31.842  INFO --- [functhread35] l.services.dynamodb.server : Initializing DynamoDB Local with the following configuration:
+2023-01-16T06:42:31.842  INFO --- [functhread35] l.services.dynamodb.server : Port:	53097
+2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : InMemory:	false
+2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : DbPath:	/var/lib/localstack/tmp/state/dynamodb
+2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : SharedDb:	false
+2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : shouldDelayTransientStatuses:	false
+2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : CorsParams:	null
+2023-01-16T06:42:31.865  INFO --- [functhread35] l.services.dynamodb.server : 
+2023-01-16T06:42:34.586  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "require" took 4453.90ms
+2023-01-16T06:42:34.679  INFO --- [functhread35] l.services.dynamodb.server : 06:42:34.654 [qtp365056339-15] WARN  com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler - DynamoDBLocalServiceException exception occured
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : com.amazonaws.services.dynamodbv2.exceptions.DynamoDBLocalServiceException: Cannot do operations on a non-existent table
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildLocalServiceException(AWSExceptionFactory.java:93) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildAWSException(AWSExceptionFactory.java:58) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.DynamoDbApiFunction.validateTableExists(DynamoDbApiFunction.java:67) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.ScanFunction.apply(ScanFunction.java:54) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.awssdkv1.client.LocalAmazonDynamoDB.scan(LocalAmazonDynamoDB.java:299) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBRequestHandler.scan(LocalDynamoDBRequestHandler.java:371) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.ScanDispatcher.enact(ScanDispatcher.java:18) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.ScanDispatcher.enact(ScanDispatcher.java:12) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.packageDynamoDBResponse(LocalDynamoDBServerHandler.java:408) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.handle(LocalDynamoDBServerHandler.java:495) ~[DynamoDBLocal.jar:?]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:190) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.Server.handle(Server.java:516) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:137) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at java.lang.Thread.run(Unknown Source) ~[?:?]
+2023-01-16T06:42:34.698  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.Scan => 400 (ResourceNotFoundException)
+2023-01-16T06:45:12.958  INFO --- [functhread52] l.services.motoserver      : starting moto server on http://0.0.0.0:59595
+2023-01-16T06:45:12.961  INFO --- [   asgi_gw_0] localstack.services.infra  : Starting mock S3 service on http port 4566 ...
+2023-01-16T06:45:13.576  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 200
+2023-01-16T06:45:13.625  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T06:59:58.681  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T06:59:58.757  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T06:59:58.859  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.PutObject => 200
+2023-01-16T08:04:23.820  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T08:04:23.900  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T08:04:24.005  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.PutObject => 200
+2023-01-16T08:09:39.814  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T08:09:39.893  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T08:09:39.963  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
+2023-01-16T08:11:14.135  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T08:11:14.219  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T08:11:14.287  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.GetObject => 200
+2023-01-16T08:14:43.892  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T08:14:43.966  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T08:14:44.028  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
+2023-01-16T08:16:36.378  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T08:16:36.470  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T08:16:36.550  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
+2023-01-16T08:18:13.237  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T08:18:13.312  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T08:18:13.375  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
+2023-01-16T08:20:29.503  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-16T08:20:29.582  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-16T08:20:29.645  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
