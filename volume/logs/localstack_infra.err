@@ -1,81 +1,42 @@
-2023-01-16T06:37:36.379  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
-2023-01-16T06:37:36.379  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
-2023-01-16T06:37:36.381  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
-2023-01-16T06:37:36.381  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
-2023-01-16T06:42:31.180  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "_load_service_plugin" took 1048.54ms
-2023-01-16T06:42:31.842  INFO --- [functhread35] l.services.dynamodb.server : Initializing DynamoDB Local with the following configuration:
-2023-01-16T06:42:31.842  INFO --- [functhread35] l.services.dynamodb.server : Port:	53097
-2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : InMemory:	false
-2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : DbPath:	/var/lib/localstack/tmp/state/dynamodb
-2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : SharedDb:	false
-2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : shouldDelayTransientStatuses:	false
-2023-01-16T06:42:31.843  INFO --- [functhread35] l.services.dynamodb.server : CorsParams:	null
-2023-01-16T06:42:31.865  INFO --- [functhread35] l.services.dynamodb.server : 
-2023-01-16T06:42:34.586  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "require" took 4453.90ms
-2023-01-16T06:42:34.679  INFO --- [functhread35] l.services.dynamodb.server : 06:42:34.654 [qtp365056339-15] WARN  com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler - DynamoDBLocalServiceException exception occured
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : com.amazonaws.services.dynamodbv2.exceptions.DynamoDBLocalServiceException: Cannot do operations on a non-existent table
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildLocalServiceException(AWSExceptionFactory.java:93) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.exceptions.AWSExceptionFactory.buildAWSException(AWSExceptionFactory.java:58) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.DynamoDbApiFunction.validateTableExists(DynamoDbApiFunction.java:67) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.api.dp.ScanFunction.apply(ScanFunction.java:54) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.shared.access.awssdkv1.client.LocalAmazonDynamoDB.scan(LocalAmazonDynamoDB.java:299) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBRequestHandler.scan(LocalDynamoDBRequestHandler.java:371) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.ScanDispatcher.enact(ScanDispatcher.java:18) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.dispatchers.ScanDispatcher.enact(ScanDispatcher.java:12) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.packageDynamoDBResponse(LocalDynamoDBServerHandler.java:408) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at com.amazonaws.services.dynamodbv2.local.server.LocalDynamoDBServerHandler.handle(LocalDynamoDBServerHandler.java:495) ~[DynamoDBLocal.jar:?]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.680  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:190) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.Server.handle(Server.java:516) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.681  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:137) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
-2023-01-16T06:42:34.682  INFO --- [functhread35] l.services.dynamodb.server : at java.lang.Thread.run(Unknown Source) ~[?:?]
-2023-01-16T06:42:34.698  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS dynamodb.Scan => 400 (ResourceNotFoundException)
-2023-01-16T06:45:12.958  INFO --- [functhread52] l.services.motoserver      : starting moto server on http://0.0.0.0:59595
-2023-01-16T06:45:12.961  INFO --- [   asgi_gw_0] localstack.services.infra  : Starting mock S3 service on http port 4566 ...
-2023-01-16T06:45:13.576  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 200
-2023-01-16T06:45:13.625  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T06:59:58.681  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T06:59:58.757  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T06:59:58.859  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.PutObject => 200
-2023-01-16T08:04:23.820  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T08:04:23.900  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T08:04:24.005  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.PutObject => 200
-2023-01-16T08:09:39.814  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T08:09:39.893  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T08:09:39.963  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
-2023-01-16T08:11:14.135  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T08:11:14.219  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T08:11:14.287  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.GetObject => 200
-2023-01-16T08:14:43.892  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T08:14:43.966  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T08:14:44.028  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
-2023-01-16T08:16:36.378  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T08:16:36.470  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T08:16:36.550  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
-2023-01-16T08:18:13.237  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T08:18:13.312  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T08:18:13.375  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
-2023-01-16T08:20:29.503  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T08:20:29.582  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T08:20:29.645  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 200
-2023-01-16T10:16:00.736  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
-2023-01-16T10:16:00.844  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
-2023-01-16T10:16:00.908  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS s3.GetObject => 200
+SERVICES variable is ignored if EAGER_SERVICE_LOADING=0.
+2023-01-23T10:10:35.497  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2023-01-23T10:10:35.497  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2023-01-23T10:10:35.498  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2023-01-23T10:10:35.498  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2023-01-23T10:10:49.844  INFO --- [functhread11] l.services.motoserver      : starting moto server on http://0.0.0.0:53863
+2023-01-23T10:10:49.846  INFO --- [   asgi_gw_0] localstack.services.infra  : Starting mock S3 service on http port 4566 ...
+2023-01-23T10:10:50.457  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 200
+2023-01-23T10:10:50.505  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-23T10:10:50.601  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2023-01-23T10:12:51.100  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-23T10:12:51.181  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-23T10:12:51.251  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2023-01-23T10:13:16.314  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-23T10:13:16.395  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-23T10:13:16.462  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2023-01-23T10:13:18.166  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "_load_service_plugin" took 1477.95ms
+2023-01-23T10:13:18.173  INFO --- [   asgi_gw_0] localstack.services.infra  : Starting mock Lambda service on http port 4566 ...
+2023-01-23T10:13:18.920  INFO --- [   asgi_gw_0] localstack.utils.bootstrap : Execution of "require" took 2232.11ms
+2023-01-23T10:13:19.436  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.CreateFunction => 400 (InternalFailure)
+2023-01-23T10:34:29.611  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-23T10:34:29.690  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-23T10:34:29.757  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2023-01-23T10:34:30.392  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.CreateFunction => 200
+2023-01-23T10:39:05.033  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-23T10:39:05.110  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-23T10:39:05.177  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2023-01-23T10:39:05.227  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.ListFunctions => 200
+2023-01-23T10:39:47.808  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-23T10:39:47.901  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-23T10:39:47.991  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2023-01-23T10:39:48.094  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.CreateFunction => 409 (ResourceConflictException)
+2023-01-23T10:40:45.975  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-23T10:40:46.066  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-23T10:40:46.133  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2023-01-23T10:40:46.186  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.ListFunctions => 200
+2023-01-23T10:41:23.941  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.CreateBucket => 409 (BucketAlreadyOwnedByYou)
+2023-01-23T10:41:24.018  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.ListBuckets => 200
+2023-01-23T10:41:24.089  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS s3.GetObject => 404 (NoSuchKey)
+2023-01-23T10:41:24.697  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.CreateFunction => 200
+2023-01-23T10:41:24.767  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.GetFunction => 200
+2023-01-23T10:41:24.856  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.ListFunctions => 200

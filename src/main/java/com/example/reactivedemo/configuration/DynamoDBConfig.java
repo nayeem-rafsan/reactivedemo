@@ -19,6 +19,15 @@ import software.amazon.awssdk.regions.servicemetadata.S3ControlServiceMetadata;
 import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.sqs.SqsClient;
+
+
+import software.amazon.awssdk.services.lambda.LambdaClient;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.lambda.model.InvokeRequest;
+import software.amazon.awssdk.core.SdkBytes;
+import software.amazon.awssdk.services.lambda.model.InvokeResponse;
+import software.amazon.awssdk.services.lambda.model.LambdaException;
+
 import java.net.URI;
 
 @Configuration
@@ -78,6 +87,13 @@ public class DynamoDBConfig {
                 .credentialsProvider(ProfileCredentialsProvider.create())
                 .build();
     }
+    @Bean
+    public LambdaClient awsLambda(){
+        return LambdaClient.builder()
+                .endpointOverride(URI.create(amazonDynamoDBEndpoint))
+                .build();
+    }
+
 
 }
 

@@ -1,6 +1,7 @@
 package com.example.reactivedemo.Repository;
 
 //import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.example.reactivedemo.configuration.AwsLambda;
 import com.example.reactivedemo.dto.Customer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,6 +16,9 @@ import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.enhanced.dynamodb.*;
 import software.amazon.awssdk.enhanced.dynamodb.model.PagePublisher;
 import software.amazon.awssdk.services.dynamodb.model.ProvisionedThroughput;
+import software.amazon.awssdk.services.lambda.LambdaClient;
+import software.amazon.awssdk.services.lambda.model.FunctionConfiguration;
+import software.amazon.awssdk.services.lambda.model.ListFunctionsResponse;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.*;
@@ -70,10 +74,12 @@ public class CustomerRepository {
     private final DynamoDbAsyncTable<Customer> customerDynamoDbAsyncTable;
     private final S3Client s3Client;
     private final SqsClient sqsClient;
+    private final LambdaClient lambdaClient;
 //    public CustomerRepository(DynamoDbAsyncTable<Customer> customerDynamoDbAsyncTable) {
 //        this.customerDynamoDbAsyncTable = customerDynamoDbAsyncTable;
 //    }
-    public CustomerRepository(DynamoDbEnhancedAsyncClient asyncClient, S3Client s3Client, SqsClient sqsClient) {
+    public CustomerRepository(DynamoDbEnhancedAsyncClient asyncClient, S3Client s3Client, SqsClient sqsClient,
+                              LambdaClient lambdaClient) {
         this.enhancedAsyncClient = asyncClient;
         this.customerDynamoDbAsyncTable = enhancedAsyncClient.table(Customer.class.getSimpleName(), TableSchema.fromBean(Customer.class));
 //        this.enhancedAsyncClient.list_table
@@ -103,8 +109,15 @@ public class CustomerRepository {
 
         // SQS
         this.sqsClient = sqsClient;
-
-
+        // Lambda
+        this.lambdaClient = lambdaClient;
+        AwsLambda.createLambdaFunction(lambdaClient, "helloWorld", "", "", "");
+        ListFunctionsResponse listFunctionsResponse = lambdaClient.listFunctions();
+        List<FunctionConfiguration> functions = listFunctionsResponse.functions();
+        System.out.println(functions.size());
+        for(FunctionConfiguration config: functions){
+            System.out.println(config.functionName());
+        }
     }
 
     public CompletableFuture<Void> save(Customer customer){
